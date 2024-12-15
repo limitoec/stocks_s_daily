@@ -30,7 +30,7 @@ jobs:
     # 步骤4: 运行 Python 脚本
     - name: 运行更新和选股脚本
       run: |
-        python update_data.py
+        python ach_stock_screener.py
 
     # 步骤5: 配置 Git 用户信息
     - name: 配置 Git
