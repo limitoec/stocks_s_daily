@@ -40,9 +40,8 @@ class AStockManager:
 
     def setup_paths(self):
         """设置并创建必要的目录"""
-        self.base_dir = Path(self.config['paths']['base_dir'])
-        self.data_dir = self.base_dir / self.config['paths']['data_dir']
-        self.backup_dir = Path(self.config['paths']['backup_dir'])
+        self.backup_dir = self.base_dir / self.config['paths']['backup_dir']
+
         
         # 创建必要的目录
         for directory in [self.data_dir, self.backup_dir]:
