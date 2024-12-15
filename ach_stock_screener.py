@@ -49,10 +49,6 @@ class AStockManager:
         for directory in [self.data_dir, self.backup_dir]:
             directory.mkdir(parents=True, exist_ok=True)
 
-        
-        # 创建必要的目录
-        for directory in [self.data_dir, self.backup_dir]:
-            directory.mkdir(parents=True, exist_ok=True)
 
     def setup_logging(self):
         """配置日志系统"""
