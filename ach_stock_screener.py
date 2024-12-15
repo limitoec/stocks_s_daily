@@ -29,15 +29,16 @@ class AStockManager:
         self.stock_list = None
         self.stock_names = None
 
+
     def load_config(self) -> dict:
         """加载配置文件"""
-        config_path = Path(__file__).parent / 'ach_config.yaml'
+        # 对于 GitHub Actions，最好使用绝对路径
+        config_path = Path(os.getcwd()) / 'ach_config.yaml'
         if not config_path.exists():
-            raise FileNotFoundError("配置文件不存在")
+            raise FileNotFoundError(f"配置文件不存在: {config_path}")
         
         with open(config_path, 'r', encoding='utf-8') as f:
             return yaml.safe_load(f)
-
 
     def setup_paths(self):
         """设置并创建必要的目录"""
