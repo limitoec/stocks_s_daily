@@ -8,6 +8,8 @@ on:
 jobs:
   update_and_select:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 添加这个权限配置
 
     steps:
     - name: 检出代码
@@ -23,7 +25,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install pandas numpy akshare pyyaml
         
-    - name: 显示工作目录结构  # 添加这一步来调试
+    - name: 显示当前目录结构
       run: |
         pwd
         ls -la
@@ -31,10 +33,10 @@ jobs:
     - name: 运行脚本
       run: |
         python ach_stock_screener.py
-      
+        
     - name: 提交更改
       run: |
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add .
         git commit -m "自动更新数据和选股结果 - $(date '+%Y-%m-%d')" || echo "没有要提交的更改"
