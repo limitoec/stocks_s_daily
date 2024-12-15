@@ -1,0 +1,48 @@
+name: 更新并选股
+
+# 定义工作流在何时触发，这里设置为每个工作日的北京时间17:00
+on:
+  schedule:
+    - cron: '0 9 * * 1-5'  # UTC 时间，每周一到周五的09:00（即北京时间17:00）
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  update_and_select:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 步骤1: 检出仓库代码
+    - name: 检出代码
+      uses: actions/checkout@v3
+
+    # 步骤2: 设置 Python 环境
+    - name: 设置 Python 版本
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'  # 使用 Python 3.9，可以根据需要调整
+
+    # 步骤3: 安装依赖项
+    - name: 安装依赖
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas numpy akshare pyyaml
+
+    # 步骤4: 运行 Python 脚本
+    - name: 运行更新和选股脚本
+      run: |
+        python update_data.py
+
+    # 步骤5: 配置 Git 用户信息
+    - name: 配置 Git
+      run: |
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+
+    # 步骤6: 添加、提交并推送更改
+    - name: 提交并推送更改
+      run: |
+        git add .
+        git commit -m "自动更新数据和选股结果 - $(date '+%Y-%m-%d %H:%M:%S')"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
