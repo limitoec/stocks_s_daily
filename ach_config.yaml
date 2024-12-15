@@ -1,8 +1,8 @@
 # A Stock Screener Configuration
 paths:
-  base_dir: '/Users/mickyli/Downloads/UGit'
+  base_dir: '.'
   data_dir: 'Astocksdata'
-  backup_dir: '/Users/mickyli/Documents/output'
+  backup_dir: 'outputA'
 
 akshare:
   batch_size: 299
@@ -10,11 +10,11 @@ akshare:
   start_date: '20240901'
 
 screening:
-  cvd_period: 14              # CVD计算周期
-  udvr_period: 14             # UDVR计算周期
-  udvr_thresholds: [9, 8, 7, 6]   # UDVR筛选阈值
+  cvd_period: 14
+  udvr_period: 14
+  udvr_thresholds: [9, 8, 7, 6]
 
-stock_prefixes:               # 股票代码前缀过滤
+stock_prefixes:
   - '00'
   - '30'
   - '60'
