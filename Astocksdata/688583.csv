@@ -1,0 +1,2 @@
+date,股票代码,open,close,high,low,volume,成交额,振幅,涨跌幅,涨跌额,换手率,Upper_Wick,Lower_Wick,Spread,Body_Length,Percent_Upper_Wick,Percent_Lower_Wick,Percent_Body_Length,Buying_Volume,Selling_Volume,Cumulative_Buying_Volume,Cumulative_Selling_Volume,CVD,UDVR,UDVR_EMA
+2025-01-15,688583,105.0,100.0,110.0,91.08,102604.0,1011430514.0,56.55,198.86,66.54,80.28,5.0,8.920000000000002,18.92,5.0,0.2642706131078224,0.47145877378435525,0.2642706131078224,37744.3890063425,64859.61099365751,37744.3890063425,64859.61099365751,-27115.22198731501,0.0,0.0
