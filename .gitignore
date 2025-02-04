@@ -1,0 +1,33 @@
+# 忽略所有的代码文件
+*.py           # 忽略所有 Python 文件
+*.ipynb        # 忽略所有 Jupyter Notebook 文件
+*.txt          # 忽略所有文本文件
+*.csv          # 忽略所有 CSV 文件
+
+# 忽略所有输出文件夹
+output/        # 忽略 output 文件夹
+results/       # 忽略 results 文件夹
+
+# 忽略日志文件
+*.log          # 忽略所有的日志文件
+
+# 忽略虚拟环境文件夹
+venv/          # 忽略 venv 文件夹（虚拟环境）
+.env           # 忽略环境文件（如果你使用的是 .env 文件存储环境变量）
+
+# 忽略 IDE 设置文件
+.idea/         # 忽略 PyCharm 或 IntelliJ 的 IDE 设置文件
+.vscode/       # 忽略 VS Code 的 IDE 设置文件
+
+# 忽略操作系统生成的文件
+.DS_Store      # 忽略 macOS 系统生成的文件
+Thumbs.db      # 忽略 Windows 系统生成的文件
+
+# 如果需要，你可以指定具体的目录或文件
+secrets/       # 忽略存储敏感信息的目录
+*.key          # 忽略任何 .key 文件（密钥文件）
+*.pem          # 忽略任何 .pem 文件（私钥文件）
+
+# 忽略其他特定文件类型
+*.bak          # 忽略所有备份文件
+*.swp          # 忽略 Vim 编辑器的交换文件
