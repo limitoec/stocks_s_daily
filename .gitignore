@@ -3,6 +3,7 @@
 *.ipynb         # 忽略所有 Jupyter Notebook 文件
 *.txt           # 忽略所有文本文件
 *.csv           # 忽略所有 CSV 文件
+*.yaml          
 
 # Ignore Jupyter notebook checkpoints
 .ipynb_checkpoints/
